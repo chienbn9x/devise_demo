@@ -1,0 +1,48 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-dark">
+    <%= link_to 'Blog Demo', root_path, class: 'navbar-brand', id: 'logo' %>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav" style="margin-right: 30px;">
+        <li class="nav-item active">
+          <%= link_to 'Home', root_path, class: 'nav-link text-white' %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'Create Blog', new_blog_path, class: 'nav-link text-white' %>
+        </li>
+        <% if user_signed_in? %>
+          <li class="nav-item">
+            <%= link_to 'Sign Out', destroy_user_session_path, class: 'nav-link text-white', method: :delete %>
+          </li>
+        <% else %>
+          <li class="nav-item">
+            <%= link_to 'Sign In', new_user_session_path, class: 'nav-link text-white' %>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'Sign Up', new_user_registration_path, class: 'nav-link text-white' %>
+          </li>
+        <% end %>
+      </ul>
+      <form class="form-inline my-2 my-lg-0 mr-auto">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+      <% if user_signed_in? %>
+      <ul class="navbar-nav" style="margin-right: 100px;">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <%= current_user.name %>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <% check = 'a' %>
+            <%= link_to 'Edit Profile', edit_user_registration_path(:edit_profile), class: 'dropdown-item' %>
+            <%= link_to 'Edit Password', edit_user_registration_path(:edit_password), class: 'dropdown-item' %>
+            <%= link_to 'Delete User', edit_user_registration_path(:delete), class: 'dropdown-item' %>
+          </div>
+        </li>
+      </ul>
+      <% end %>
+    </div>
+  </nav>

@@ -1,0 +1,10 @@
+<h1>Home Index</h1>
+
+<% @blogs.each do |blog| %>
+    <div class="row" style="margin-bottom: 20px;">
+        <div class="col-6 border border-primary" style="padding-top: 10px;">
+            <%= link_to blog.title, blog_path(blog), class: 'text-dark' %> <br>
+            <p class="text-muted">Author by: <%= User.where(id: blog.user_id).pluck('name').join() %></p>
+        </div>
+    </div>
+<% end %>

@@ -1,0 +1,11 @@
+<%= form_with model: blog do |f| %>
+    <div class="mb-3">
+        <%= f.label :title, 'Tiêu đề', class: 'form-label' %>
+        <%= f.text_field :title, class: 'form-control' %>
+    </div>
+    <div class="mb-3">
+        <%= f.label :description, 'Mô tả', class: 'form-label' %>
+        <%= f.text_area :description, class: 'form-control' %>
+    </div>
+    <%= f.submit 'Create Blog', class: 'btn btn-success' %>
+<% end %>

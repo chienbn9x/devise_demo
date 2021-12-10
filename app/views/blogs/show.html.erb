@@ -1,0 +1,15 @@
+<h2>Blog</h2>
+
+<p class="text-primary">
+    Author: <%= User.where(id: @blog.user_id).pluck('name').join() %> <br>
+    <em><small>Ngày cập nhật: <%= @blog.updated_at.strftime('%d-%m_%Y') %></small></em>
+</p>
+
+<h4>Title</h4>
+<p class="text-danger" style="font-size: 1.2em;">
+    <%= @blog.title %>
+</p>
+<h4>Description</h4>
+<p class="text-secondary">
+    <%= @blog.description %>
+</p>
