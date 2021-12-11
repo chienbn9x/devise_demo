@@ -273,6 +273,7 @@ DEPENDENCIES
   devise
   jbuilder (~> 2.7)
   letter_opener
+  omniauth
   omniauth-google-oauth2
   pry-rails
   puma (~> 5.0)

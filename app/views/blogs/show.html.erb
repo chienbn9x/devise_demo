@@ -2,7 +2,7 @@
 
 <p class="text-primary">
     Author: <%= User.where(id: @blog.user_id).pluck('name').join() %> <br>
-    <em><small>Ngày cập nhật: <%= @blog.updated_at.strftime('%d-%m_%Y') %></small></em>
+    <em><small>Ngày cập nhật: <%= @blog.updated_at.strftime('%d-%m-%Y') %></small></em>
 </p>
 
 <h4>Title</h4>

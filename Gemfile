@@ -54,7 +54,8 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # devise
 gem 'devise'
-gem 'omniauth-google-oauth2'
+gem "omniauth"
+gem "omniauth-google-oauth2"
 
 # mailler
 gem 'letter_opener', group: :development
